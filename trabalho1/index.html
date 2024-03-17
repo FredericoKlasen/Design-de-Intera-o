@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão Presente</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="container" id="div-principal">
+            <form id="form-cartao">
+                <fieldset>
+                    <div class="mb-3"> <!-- Classe mb-3 do bootstrap serve para adicionar margem em baixo do elemento (medium bottom) equivalente a 24px ou 1.5rem -->
+                        <label for="remetente" class="form-label">De</label>
+                        <input type="text" class="form-control form-control-sm" id="remetente" required maxlength="50">
+                    </div>
+                    <div class="mb-3">
+                        <label for="destinatario" class="form-label">Para</label>
+                        <input type="text" class="form-control form-control-sm" id="destinatario" required maxlength="50">
+                    </div>
+
+                    <div class="mb-3 form-check form-check-inline">
+                        <label class="form-check-label" for="cartao-natal">Natal</label>
+                        <input type="radio" class="form-check-input" name="inlineRadioOptions" id="cartao-natal" value="natal" required>
+                    </div>
+                    <div class="mb-3 form-check form-check-inline">
+                        <label class="form-check-label" for="cartao-pascoa">Páscoa</label>
+                        <input type="radio" class="form-check-input" name="inlineRadioOptions" id="cartao-pascoa" value="pascoa" required>
+                    </div>
+                    <div class="mb-3 form-check form-check-inline">
+                        <label class="form-check-label" for="cartao-aniversario">Aniversário</label>
+                        <input type="radio" class="form-check-input" name="inlineRadioOptions" id="cartao-aniversario" value="aniversario" required>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="cor-fundo">Cor de Fundo</label>
+                                <input type="color" id="cor-fundo" class="form-control form-control-sm" value="#f5f5f5">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="cor-borda">Cor da Borda</label>
+                                <input type="color" id="cor-borda" class="form-control form-control-sm">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="cor-fonte">Cor da Fonte</label>
+                                <input type="color" id="cor-fonte" class="form-control form-control-sm">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fonte">Escolha a fonte</label>
+                        <select class="form-select form-select-sm" id="fonte">
+                            <option selected>Selecione...</option> <!-- Esta propriedade vem selecionada por padrão no <select> -->
+                            <option class="poppins" value="poppins">Poppins</option>
+                            <option class="lora" value="lora">Lora Serifa</option>
+                            <option class="great-vibes" value="great-vibes">Great Vibes Manuscrita</option>
+                            <option class="parisienne" value="parisienne">Parisienne Manuscrita</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensagem" class="form-label">Mensagem</label>
+                        <input type="text" class="form-control form-control-sm" id="mensagem" maxlength="50" required> <!-- Neste campo há uma limitação máxima de 50 caractéres, para não estragar o layout do cartão -->
+                    </div>
+
+                    <button type="submit" class="btn" id="btn-gerar-cartao">Gerar cartão</button> <!-- Ao apertar este botão, as alterações do formulário são feitas no cartão -->
+                </fieldset>
+            </form>
+            <div class="card-body" id="card-body"> <!-- Essa é a div que mudará a cor do fundo do cartão -->
+                <img id="imagem-cartao" src="imagens/natal.png" alt="Imagem do Cartão"> <!-- Esta imagem está como display: none; o Javascript está encarregado de inserir o src (diretório) da imagem -->
+                <div class="cartao" id="cartao"> <!-- Esta div é somente para separar a imagem dos textos, e para deixar um espaço interno da div card-body -->
+                    <h4 class="card-title text-center" id="titulo-cartao">Cartão</h4>
+                    <div class="mb-2">
+                        <label id="label-card-remetente" class="form-label">De:</label>
+                        <span id="card-remetente"></span>
+                    </div>
+                    <div class="mb-2">
+                        <label id="label-card-destinatario" class="form-label">Para:</label>
+                        <span id="card-destinatario"></span>
+                    </div>
+                    <div class="mb-2">
+                        <label id="label-card-mensagem" class="form-label">Mensagem</label><br>
+                        <span id="card-mensagem"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="container"> <!-- Modelo de footer do bootstrap -->
+        <footer class="py-3 my-4">
+            <hr>
+            <p class="text-center text-body-secondary">&copy; 2024 Frederico Klasen</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
