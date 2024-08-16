@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.navbar {
+  height: 115px;
+  padding: 30px;
+  background-color: #18181b;
+  color: #fafafa;
+}
+
+.button-39 {
+  gap: 5px;
+  background-color: #ffffff;
+  border: 1px solid rgb(209, 213, 219);
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #111827;
+  line-height: 1.25rem;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  text-decoration: none #d1d5db solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-39:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.button-39:focus-visible {
+  box-shadow: none;
+}
+
+.button-39:disabled {
+  background-color: #e4e0e0d5;
+  cursor: not-allowed;
+}
+
+#resultadoBuscaFeriados {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.bi-info-circle {
+  font-size: 20px;
+}
+
+/* Desabilitar as setas para cima e para baixo do input numérico 
+    Para navegadores baseados em WebKit (Chrome, Safari, etc.): */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Para Firefox */
+input[type="number"] {
+  appearance: none;
+  -moz-appearance: textfield;
+}
+
+/* Para Edge e IE10+ */
+input[type="number"]::-ms-clear {
+  display: none;
+}
